@@ -1,0 +1,28 @@
+﻿
+
+@model IEnumerable<MvcMusicStore.Models.Album>
+ 
+@{
+    ViewBag.Title = "Browse Albums";
+}
+ 
+<div class="genre">
+  <h3><em></em> Albumler</h3>
+
+    <ul id="album-list">
+        @foreach (var album in Model)
+        {
+            <li>        
+                <a href="@Url.Action("Details",
+                    new { id = album.AlbumId })">
+                    <img alt="@album.Title" 
+                    src="~/Content/Images/placeholder.gif"
+                         />
+                   <span> @album.Title     </span>
+                </a>
+              
+            </li>
+        }
+    </ul>
+</div>
+

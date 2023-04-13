@@ -1,0 +1,21 @@
+﻿
+@model IEnumerable<MvcMusicStore.Models.Genre>
+
+@{
+    ViewData["Title"] = "Store";
+}
+
+
+<p> Select from @Model.Count() genres:</p>
+
+   
+
+
+<ul>
+    @foreach (var genre in Model)
+    {
+
+              <li> <a href="/Store/Browse/@genre.GenreId">@genre.Name</a>   </li>
+    }
+
+</ul>
